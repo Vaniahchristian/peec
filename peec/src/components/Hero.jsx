@@ -2,8 +2,15 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <div className="bg-green-50 py-20">
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-green-50 py-20">
+      <div 
+        className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31')] bg-cover bg-center bg-no-repeat opacity-10"
+        style={{ 
+          backgroundImage: `url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop")`
+        }}
+      ></div>
+      
+      <div className="relative z-10 max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
