@@ -12,6 +12,7 @@ import ContactForm from './components/ContactForm';
 
 function App() {
   return (
+    <BrowserRouter>
     <Router>
       <div className="min-h-screen flex flex-col w-full">
         <Navbar />
@@ -78,6 +79,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          
         </main>
 
         {/* Emergency Contact Banner */}
@@ -95,6 +97,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </BrowserRouter>
   );
 }
 
