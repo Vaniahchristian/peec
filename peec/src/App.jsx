@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,39 +12,64 @@ import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (prefersDark) {
+      setTheme('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    // Update document class and localStorage when theme changes
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col w-full">
-        <Navbar />
+      <div className={`min-h-screen flex flex-col w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         
         {/* Main Content */}
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={
               <>
-                <Hero />
-                <section className="py-16 bg-white w-full">
+                <Hero theme={theme} />
+                <section className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
-                    <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
+                    <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                       Our Featured Services
                     </h2>
                     <ServicePreview />
                   </div>
                 </section>
-                <Testimonials />
-                <section id="contact-section" className="py-16 bg-white w-full">
+                <Testimonials theme={theme} />
+                <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
-                    <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
+                    <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                       Schedule a Site Visit
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                       {/* Contact Form */}
-                      <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-700' : 'bg-green-50'}`}>
                         <ContactForm />
                       </div>
 
                       {/* Map */}
-                      <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-700' : 'bg-green-50'}`}>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden">
                           <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753876977032!2d32.60775937469281!3d0.3762141995829234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb0932058e0f%3A0x7f22e7105a39e96c!2sG%26H%20Plaza%2C%20Bahai%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1709913045385!5m2!1sen!2sug"
@@ -56,7 +82,7 @@ function App() {
                             title="PEEC Systems Location at G&H Plaza, Bahai Road"
                           ></iframe>
                         </div>
-                        <div className="mt-4 text-green-800">
+                        <div className={`mt-4 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                           <p className="font-semibold">Find us at:</p>
                           <p>G&H Plaza, Bahai Road</p>
                           <p>Near Star Petrol Station</p>
@@ -82,7 +108,7 @@ function App() {
         </main>
 
         {/* Emergency Contact Banner */}
-        <div className="bg-green-700 text-white py-4 w-full">
+        <div className={`py-4 w-full ${theme === 'dark' ? 'bg-green-900' : 'bg-green-700'} text-white`}>
           <div className="container mx-auto px-4 text-center">
             <p className="text-lg">
               Need immediate assistance? Call us 24/7:
@@ -93,7 +119,7 @@ function App() {
           </div>
         </div>
 
-        <Footer />
+        <Footer theme={theme} />
       </div>
     </BrowserRouter>
   );

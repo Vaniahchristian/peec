@@ -28,14 +28,14 @@ const ServicePreview = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.2 }}
-          className="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300"
+          className="bg-green-50 dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300"
         >
           <div className="text-4xl mb-4">{service.icon}</div>
-          <h3 className="text-xl font-bold text-green-800 mb-2">{service.title}</h3>
-          <p className="text-gray-600 mb-4">{service.description}</p>
+          <h3 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">{service.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
           <Link
             to="/services"
-            className="text-green-600 hover:text-green-800 font-medium inline-flex items-center"
+            className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-medium inline-flex items-center"
           >
             Learn More
             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
