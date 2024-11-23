@@ -10,6 +10,7 @@ import Hero from './components/Hero';
 import ServicePreview from './components/ServicePreview';
 import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
+import { motion } from 'framer-motion';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -39,23 +40,33 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={`min-h-screen flex flex-col w-full ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+      <div className={`min-h-screen flex flex-col w-full overflow-x-hidden ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         
         {/* Main Content */}
         <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={
-              <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
                 <Hero theme={theme} />
-                <section className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+                <motion.section 
+                  className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
                   <div className="container mx-auto px-4 w-full">
                     <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                       Our Featured Services
                     </h2>
                     <ServicePreview />
                   </div>
-                </section>
+                </motion.section>
                 <Testimonials theme={theme} />
                 <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
@@ -97,7 +108,7 @@ function App() {
                     </div>
                   </div>
                 </section>
-              </>
+              </motion.div>
             } />
             
             <Route path="/services" element={<Services />} />
@@ -108,7 +119,12 @@ function App() {
         </main>
 
         {/* Emergency Contact Banner */}
-        <div className={`py-4 w-full ${theme === 'dark' ? 'bg-green-900' : 'bg-green-700'} text-white`}>
+        <motion.div 
+          className={`py-4 w-full ${theme === 'dark' ? 'bg-green-900' : 'bg-green-700'} text-white`}
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
           <div className="container mx-auto px-4 text-center">
             <p className="text-lg">
               Need immediate assistance? Call us 24/7:
@@ -117,7 +133,7 @@ function App() {
               </a>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         <Footer theme={theme} />
       </div>
