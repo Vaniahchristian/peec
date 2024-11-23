@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -13,7 +13,6 @@ import ContactForm from './components/ContactForm';
 function App() {
   return (
     <BrowserRouter>
-    <Router>
       <div className="min-h-screen flex flex-col w-full">
         <Navbar />
         
@@ -96,7 +95,6 @@ function App() {
 
         <Footer />
       </div>
-    </Router>
     </BrowserRouter>
   );
 }
