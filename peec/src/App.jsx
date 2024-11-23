@@ -31,7 +31,7 @@ function App() {
                   </div>
                 </section>
                 <Testimonials />
-                <section className="py-16 bg-white w-full">
+                <section id="contact-section" className="py-16 bg-white w-full">
                   <div className="container mx-auto px-4 w-full">
                     <h2 className="text-3xl font-bold text-center text-green-800 mb-12">
                       Schedule a Site Visit

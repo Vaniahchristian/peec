@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative bg-green-50 py-20">
       <div 
@@ -27,12 +33,12 @@ const Hero = () => {
           </p>
           <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <div className="rounded-md shadow">
-              <Link
-                to="/contact"
+              <button
+                onClick={scrollToContact}
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 transition md:py-4 md:text-lg md:px-10"
               >
                 Schedule a Site Visit
-              </Link>
+              </button>
             </div>
           </div>
         </motion.div>
