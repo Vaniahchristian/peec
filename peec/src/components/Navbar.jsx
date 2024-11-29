@@ -8,8 +8,13 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className="bg-green-50 dark:bg-gray-800 shadow-lg w-full">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Brand Name */}
-          <Link to="/" className="flex-shrink-0">
+          {/* Brand Logo and Name */}
+          <Link to="/" className="flex items-center space-x-4 flex-shrink-0">
+            <img 
+              src="/images/logo.png" 
+              alt="PEEC Systems Logo" 
+              className="h-12 w-auto"
+            />
             <h1 className="text-2xl font-bold text-green-800 dark:text-green-400">PEEC SYSTEMS</h1>
           </Link>
           
