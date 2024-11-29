@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Blog from './components/Blog';
 import Hero from './components/Hero';
 import ServicePreview from './components/ServicePreview';
 import Testimonials from './components/Testimonials';
@@ -54,7 +55,7 @@ function App() {
               >
                 <Hero theme={theme} />
                 <motion.section 
-                  className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}
+                  className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -68,19 +69,19 @@ function App() {
                   </div>
                 </motion.section>
                 <Testimonials theme={theme} />
-                <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+                <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
                     <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                       Schedule a Site Visit
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                       {/* Contact Form */}
-                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-700' : 'bg-green-50'}`}>
+                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-800' : 'bg-green-50'}`}>
                         <ContactForm />
                       </div>
 
                       {/* Map */}
-                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-700' : 'bg-green-50'}`}>
+                      <div className={`p-6 rounded-lg shadow-md ${theme === 'dark' ? 'bg-gray-800' : 'bg-green-50'}`}>
                         <div className="w-full h-[400px] rounded-lg overflow-hidden">
                           <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.753876977032!2d32.60775937469281!3d0.3762141995829234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb0932058e0f%3A0x7f22e7105a39e96c!2sG%26H%20Plaza%2C%20Bahai%20Rd%2C%20Kampala!5e0!3m2!1sen!2sug!4v1709913045385!5m2!1sen!2sug"
@@ -114,6 +115,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
           
         </main>

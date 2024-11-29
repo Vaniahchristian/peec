@@ -17,9 +17,9 @@ const ContactForm = () => {
   return (
     <div className="bg-green-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
       <h3 className="text-xl font-bold text-green-800 dark:text-green-400 mb-4">Send us a Message</h3>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 ">
             Full Name
           </label>
           <input
@@ -27,7 +27,7 @@ const ContactForm = () => {
             id="name"
             className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 
                      shadow-sm focus:border-green-500 focus:ring-green-500 
-                     dark:bg-gray-700 dark:text-white"
+                     dark:bg-gray-700 dark:text-white  p-3"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
             required
@@ -43,7 +43,7 @@ const ContactForm = () => {
             id="email"
             className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 
                      shadow-sm focus:border-green-500 focus:ring-green-500 
-                     dark:bg-gray-700 dark:text-white"
+                     dark:bg-gray-700 dark:text-white p-3"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
             required
@@ -59,7 +59,7 @@ const ContactForm = () => {
             id="phone"
             className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 
                      shadow-sm focus:border-green-500 focus:ring-green-500 
-                     dark:bg-gray-700 dark:text-white"
+                     dark:bg-gray-700 dark:text-white p-3"
             value={formData.phone}
             onChange={(e) => setFormData({...formData, phone: e.target.value})}
             required

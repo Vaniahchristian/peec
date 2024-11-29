@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 
 export const Contact = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 flex-grow w-screen">
+    <div className="bg-white dark:bg-gray-900 flex-grow  w-screen mx-auto px-4">
       <div className="px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

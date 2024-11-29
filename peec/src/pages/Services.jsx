@@ -83,7 +83,7 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="bg-white dark:bg-gray-900 flex-grow w-screen">
+    <div className="bg-white dark:bg-gray-900 flex-grow w-full">
       <div className="w-full px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

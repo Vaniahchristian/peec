@@ -8,6 +8,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className="bg-green-50 dark:bg-gray-800 shadow-lg w-full">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
+          {/* Brand Name */}
           <Link to="/" className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-green-800 dark:text-green-400">PEEC SYSTEMS</h1>
           </Link>
@@ -26,13 +27,15 @@ const Navbar = ({ theme, toggleTheme }) => {
           </div>
 
           {/* Desktop menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8  ">
             <Link to="/" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition">Home</Link>
             <Link to="/services" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition">Services</Link>
             <Link to="/about" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition">About</Link>
             <Link to="/contact" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition">Contact</Link>
+            <Link to="/blog" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition">Blog</Link>
           </div>
 
+          {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -49,6 +52,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <Link to="/services" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition px-3 py-2">Services</Link>
               <Link to="/about" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition px-3 py-2">About</Link>
               <Link to="/contact" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition px-3 py-2">Contact</Link>
+              <Link to="/blog" className="text-green-800 dark:text-green-400 hover:text-black dark:hover:text-white transition px-3 py-2">Blog</Link>
             </div>
           </div>
         )}
@@ -57,4 +61,4 @@ const Navbar = ({ theme, toggleTheme }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
