@@ -41,6 +41,8 @@ const companies = [
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+ 
+
 
   return (
     <div className="mx-auto px-4 py-12 max-w-screen-full">
@@ -55,16 +57,16 @@ const Blog = () => {
       </div>
 
       {/* Companies Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
         {companies.map((company) => (
-          <div key={company.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div key={company.id} className="bg-green-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
             <img
               src={company.image}
               alt={company.name}
               className="w-full h-32 object-cover transition-transform duration-300 hover:scale-110"
             />
             <div className="p-6">
-              <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+              <h2 className="text-xl font-bold text-green-800 dark:text-green-400 mb-3 ">
                 {company.name}
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-4">

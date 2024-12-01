@@ -6,6 +6,13 @@ import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
 
 const Home = () => {
+  console.log("Home component rendered");
+
+  console.log("Blog component rendered");
+  console.log("Selected Category:", selectedCategory);
+  console.log("Companies:", companies);
+
+  
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';

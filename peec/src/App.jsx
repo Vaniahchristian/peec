@@ -14,6 +14,7 @@ import ContactForm from './components/ContactForm';
 import { motion } from 'framer-motion';
 
 function App() {
+  console.log("App component rendered");
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -69,6 +70,9 @@ function App() {
                   </div>
                 </motion.section>
                 <Testimonials theme={theme} />
+
+
+                <Blog theme={theme} />
                 <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
                     <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
@@ -111,6 +115,7 @@ function App() {
                 </section>
               </motion.div>
             } />
+            
             
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
