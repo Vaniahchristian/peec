@@ -9,7 +9,7 @@ const Hero = ({ theme }) => {
   };
 
   return (
-    <div className={`relative py-20 md:py-32 transition-colors duration-200 w-screen overflow-hidden`}>
+    <div className={`relative py-14 md:py-25 transition-colors duration-200 w-screen overflow-hidden`}>
       <div 
         className={`absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-200 ${
           theme === 'dark' ? 'opacity-10' : 'opacity-20'
@@ -20,6 +20,9 @@ const Hero = ({ theme }) => {
       ></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-center ">
+          <img src="images/logo.png" alt="Logo" className="h-24 w-auto md:h-40 md:w-auto -mb-2" />
+        </div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

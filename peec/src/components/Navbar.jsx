@@ -5,7 +5,11 @@ const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-green-50 dark:bg-gray-800 shadow-lg w-full sticky top-0 z-50 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90">
+    <nav className={`
+      backdrop-blur-md bg-green-50 dark:bg-gray-800/70
+      shadow-lg w-full sticky top-0 z-50
+      border-b border-white/20 dark:border-gray-700/30
+    `}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Brand Logo and Name */}
@@ -60,7 +64,14 @@ const Navbar = ({ theme, toggleTheme }) => {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transform hover:scale-110 transition-all"
+            className={`
+              p-3 rounded-xl transition-all duration-300
+              ${theme === 'dark'
+                ? 'bg-gray-800 shadow-[5px_5px_10px_#1f2937,-5px_-5px_10px_#111827]'
+                : 'bg-white shadow-[5px_5px_10px_#d1d5db,-5px_-5px_10px_#ffffff]'
+              }
+              hover:scale-105
+            `}
           >
             {theme === 'dark' ? '🌞' : '🌙'}
           </button>
