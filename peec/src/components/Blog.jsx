@@ -4,37 +4,37 @@ const companies = [
   {
     id: 1,
     name: "MTN Uganda",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/MTN_Logo.svg/1200px-MTN_Logo.svg.png",
+    image: "/images/mtn.png",
     description: "Leading telecommunications company in Uganda, providing mobile and internet services."
   },
   {
     id: 2,
     name: "Uganda Breweries",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Uganda_Breweries_Logo.png/220px-Uganda_Breweries_Logo.png",
+    image: "/images/ugandabreweries.jpg",
     description: "A major player in the beverage industry, known for its quality beers and spirits."
   },
   {
     id: 3,
     name: "Stanbic Bank",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Stanbic_Bank_Logo.svg/1200px-Stanbic_Bank_Logo.svg.png",
+    image: "/images/stanbic.jpg",
     description: "One of the largest banks in Uganda, offering a wide range of financial services."
   },
   {
     id: 4,
     name: "Uganda Airlines",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/Uganda_Airlines_Logo.png/220px-Uganda_Airlines_Logo.png",
+    image: "/images/uganda.png",
     description: "The national carrier of Uganda, providing domestic and international flights."
   },
   {
     id: 5,
     name: "NSSF Uganda",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/NSSF_Uganda_Logo.png/220px-NSSF_Uganda_Logo.png",
+    image: "/images/nssf.png",
     description: "The National Social Security Fund, providing social security services to Ugandans."
   },
   {
     id: 6,
     name: "DHL Uganda",
-    image: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/DHL_Logo.svg/1200px-DHL_Logo.svg.png",
+    image: "/images/dhl.jpg",
     description: "Global leader in the logistics industry, providing international shipping and courier services."
   },
 ];
@@ -63,7 +63,8 @@ const Blog = () => {
             <img
               src={company.image}
               alt={company.name}
-              className="w-full h-32 object-cover transition-transform duration-300 hover:scale-110"
+              className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
+              style={{ height: '130px', width: '100%' }}
             />
             <div className="p-6">
               <h2 className="text-xl font-bold text-green-800 dark:text-green-400 mb-3 ">
