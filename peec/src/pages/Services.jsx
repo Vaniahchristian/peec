@@ -78,6 +78,42 @@ const services = [
       "Security Monitoring",
       "Staff Training"
     ]
+  },
+  {
+    title: "Electric Fences",
+    description: "Advanced electric fencing solutions for residential and commercial properties. Our systems provide enhanced security and peace of mind.",
+    icon: "⚡",
+    features: [
+      "Perimeter Security",
+      "Remote Monitoring",
+      "Customizable Solutions",
+      "Integration with Alarm Systems",
+      "24/7 Support"
+    ]
+  },
+  {
+    title: "Fuel Monitoring Systems",
+    description: "Comprehensive fuel monitoring solutions to track fuel usage and prevent theft. Ideal for businesses with fleet operations.",
+    icon: "⛽",
+    features: [
+      "Real-time Fuel Tracking",
+      "Alerts for Unusual Activity",
+      "Data Analytics",
+      "Integration with Fleet Management",
+      "Custom Reports"
+    ]
+  },
+  {
+    title: "Car Tracking Systems",
+    description: "State-of-the-art GPS tracking systems for vehicles. Ensure the safety and security of your fleet with real-time tracking.",
+    icon: "🚗",
+    features: [
+      "Real-time Location Tracking",
+      "Geofencing Alerts",
+      "Route Optimization",
+      "Driver Behavior Monitoring",
+      "24/7 Support"
+    ]
   }
 ];
 
@@ -93,7 +129,7 @@ const Services = () => {
           <h1 className="text-4xl font-bold text-center text-green-800 dark:text-green-400 mb-12">Our Services</h1>
           
           {/* Featured Service */}
-          <div className="mb-16">
+          {/* <div className="mb-16">
             <div className="bg-green-50 dark:bg-gray-800 rounded-lg p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-green-800 dark:text-green-400 mb-4">
                 Complete POS Solutions
@@ -123,6 +159,7 @@ const Services = () => {
               </div>
             </div>
           </div>
+          */}
 
           {/* All Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,9 +1,24 @@
 import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
+import { useEffect } from 'react';
 
 export const Contact = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    script.onload = () => {
+      window.voiceflow.chat.load({
+        verify: { projectID: '6744db9fe736fed81f23a449' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production'
+      });
+    };
+    document.body.appendChild(script);
+  }, []);
+
   return (
-    <div className="bg-white dark:bg-gray-900 flex-grow  w-screen mx-auto px-4">
+    <div className="bg-white dark:bg-gray-900 flex-grow w-screen mx-auto px-4">
       <div className="px-4 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
