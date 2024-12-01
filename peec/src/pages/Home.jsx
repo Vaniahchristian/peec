@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ServicePreview from '../components/ServicePreview';
 import Testimonials from '../components/Testimonials';
+import Blog from '../components/Blog';
 
 const Home = () => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const Home = () => {
         </div>
       </motion.div>
       <Testimonials />
+      <Blog />
     </div>
   );
 };
