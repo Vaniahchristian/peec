@@ -71,8 +71,14 @@ function App() {
                 </motion.section>
                 <Testimonials theme={theme} />
 
+                <div className='container mx-auto px-4 w-full'>
 
+                
                 <Blog theme={theme} />
+
+                </div>
+
+
                 <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
                   <div className="container mx-auto px-4 w-full">
                     <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>

@@ -41,8 +41,6 @@ const companies = [
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
- 
-
 
   return (
     <div className="mx-auto px-4 py-12 max-w-screen-full">
@@ -57,20 +55,32 @@ const Blog = () => {
       </div>
 
       {/* Companies Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {companies.map((company) => (
-          <div key={company.id} className="bg-green-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <img
-              src={company.image}
-              alt={company.name}
-              className="w-full h-auto object-cover transition-transform duration-300 hover:scale-110"
-              style={{ height: '130px', width: '100%' }}
-            />
+          <div
+            key={company.id}
+            className="relative bg-green-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
+          >
+            {/* Image Section */}
+            <div className="overflow-hidden">
+              <img
+                src={company.image}
+                alt={company.name}
+                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                <h2 className="text-white text-lg font-bold">{company.name}</h2>
+              </div>
+            </div>
+
+            {/* Text Section */}
             <div className="p-6">
-              <h2 className="text-xl font-bold text-green-800 dark:text-green-400 mb-3 ">
+              <h2 className="text-xl font-bold text-green-800 dark:text-green-400 mb-3">
                 {company.name}
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 dark:text-gray-300">
                 {company.description}
               </p>
             </div>
