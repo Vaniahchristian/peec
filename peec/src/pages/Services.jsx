@@ -4,7 +4,7 @@ const services = [
   {
     title: "Point of Sale Systems",
     description: "Complete POS solutions for restaurants and supermarkets. Our systems streamline operations, improve customer service, and provide detailed business insights.",
-    icon: "🏪",
+    image: "/images/point-of-sale (2).png",
     features: [
       "Restaurant Management System",
       "Supermarket Inventory Control",
@@ -17,7 +17,7 @@ const services = [
   {
     title: "Restaurant POS",
     description: "Specialized POS systems for restaurants, cafes, and food service businesses. Includes table management, kitchen display systems, and mobile ordering.",
-    icon: "🍽️",
+    image: "/images/cashier (1).png",
     features: [
       "Table Management",
       "Kitchen Display System",
@@ -30,7 +30,7 @@ const services = [
   {
     title: "Supermarket POS",
     description: "Comprehensive retail management systems for supermarkets and retail stores. Features include inventory management, barcode scanning, and supplier management.",
-    icon: "🛒",
+    image: "/images/point-of-sale (2).png",
     features: [
       "Inventory Management",
       "Barcode Scanning",
@@ -43,7 +43,7 @@ const services = [
   {
     title: "CCTV Installation",
     description: "We supply, provide and install a wide range of high quality, high visibility and covert cameras for home or commercial properties. Available in Bullet, Dome, Box, Spy, and Miniature Cameras.",
-    icon: "🎥",
+    image: "/images/cctv (1).png",
     features: [
       "24/7 Monitoring",
       "High Resolution Cameras",
@@ -56,7 +56,7 @@ const services = [
   {
     title: "Automatic Gate & Intercom",
     description: "Wide range of automatic gate solutions for both slide and swing gates with GSM mobile operations and bluetooth compatibility. Includes intercom system integration.",
-    icon: "🚪",
+    image: "/images/automatic-gate.png",
     features: [
       "Mobile Control",
       "Intercom Integration",
@@ -69,7 +69,7 @@ const services = [
   {
     title: "IT Support & Maintenance",
     description: "Comprehensive IT support and maintenance services for businesses. We ensure your systems run smoothly and efficiently.",
-    icon: "💻",
+    image: "/images/technical-support.png",
     features: [
       "24/7 Technical Support",
       "System Updates",
@@ -82,7 +82,7 @@ const services = [
   {
     title: "Electric Fences",
     description: "Advanced electric fencing solutions for residential and commercial properties. Our systems provide enhanced security and peace of mind.",
-    icon: "⚡",
+    image: "/images/electric-fence.png",
     features: [
       "Perimeter Security",
       "Remote Monitoring",
@@ -94,7 +94,7 @@ const services = [
   {
     title: "Fuel Monitoring Systems",
     description: "Comprehensive fuel monitoring solutions to track fuel usage and prevent theft. Ideal for businesses with fleet operations.",
-    icon: "⛽",
+    image: "/images/fuel-station.png",
     features: [
       "Real-time Fuel Tracking",
       "Alerts for Unusual Activity",
@@ -106,7 +106,7 @@ const services = [
   {
     title: "Car Tracking Systems",
     description: "State-of-the-art GPS tracking systems for vehicles. Ensure the safety and security of your fleet with real-time tracking.",
-    icon: "🚗",
+    image: "/images/car.png",
     features: [
       "Real-time Location Tracking",
       "Geofencing Alerts",
@@ -142,9 +142,9 @@ const Services = () => {
                 className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105"
               >
                 <div className="flex items-center justify-center mb-4">
-                  <div className="text-5xl bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-400 p-4 rounded-full shadow-md">
-                    {service.icon}
-                  </div>
+                  
+                   <img src= {service.image} alt={service.title} className='w=14 h-14 object-contain  mb-1'/>
+                  
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 dark:text-green-400 text-center mb-3">
                   {service.title}
