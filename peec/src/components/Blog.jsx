@@ -62,7 +62,7 @@ const Blog = () => {
             className="relative bg-green-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
           >
             {/* Image Section */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden p-1">
               <img
                 src={company.image}
                 alt={company.name}
@@ -76,7 +76,7 @@ const Blog = () => {
             </div>
 
             {/* Text Section */}
-            <div className="p-6">
+            <div className="p-5">
               <h2 className="text-xl font-bold text-green-800 dark:text-green-400 mb-3">
                 {company.name}
               </h2>
