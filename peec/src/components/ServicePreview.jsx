@@ -5,17 +5,17 @@ const services = [
   {
     title: "CCTV Installation",
     description: "High-quality surveillance systems for your security needs.",
-    icon: "🎥",
+    image: "/images/cctv (1).png",
   },
   {
     title: "Automatic Gates",
     description: "Smart gate solutions with remote access control.",
-    icon: "🚪",
+    image: "/images/automatic-gate.png",
   },
   {
     title: "Electric Fences",
     description: "Advanced perimeter security systems.",
-    icon: "⚡",
+    image: "/images/electric-fence.png",
   }
 ];
 
@@ -30,7 +30,7 @@ const ServicePreview = () => {
           transition={{ delay: index * 0.2 }}
           className="bg-green-50 dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition duration-300"
         >
-          <div className="text-4xl mb-4">{service.icon}</div>
+          <img src={service.image} alt={service.title} className="w-14 object-contain mb-4 " />
           <h3 className="text-xl font-bold text-green-800 dark:text-green-400 mb-2">{service.title}</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-4">{service.description}</p>
           <Link
