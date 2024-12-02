@@ -143,7 +143,7 @@ const Services = () => {
               >
                 <div className="flex items-center justify-center mb-4">
                   
-                   <img src= {service.image} alt={service.title} className='w=14 h-14 object-contain  mb-1'/>
+                   <img src= {service.image} alt={service.title} className='w=14 h-16 object-contain  mb-1'/>
                   
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 dark:text-green-400 text-center mb-3">
