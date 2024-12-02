@@ -4,37 +4,37 @@ const companies = [
   {
     id: 1,
     name: "MTN Uganda",
-    image: "/images/mtn.png",
+    image: "/images/mtn-removebg-preview.png",
     description: "Leading telecommunications company in Uganda, providing mobile and internet services."
   },
   {
     id: 2,
     name: "Uganda Breweries",
-    image: "/images/ugandabreweries.jpg",
+    image: "/images/ugandabreweries-removebg-preview.png",
     description: "A major player in the beverage industry, known for its quality beers and spirits."
   },
   {
     id: 3,
     name: "Stanbic Bank",
-    image: "/images/stanbic.jpg",
+    image: "/images/stanbic-removebg-preview.png",
     description: "One of the largest banks in Uganda, offering a wide range of financial services."
   },
   {
     id: 4,
     name: "Uganda Airlines",
-    image: "/images/uganda.png",
+    image: "/images/uganda-removebg-preview.png",
     description: "The national carrier of Uganda, providing domestic and international flights."
   },
   {
     id: 5,
     name: "NSSF Uganda",
-    image: "/images/nssf.png",
+    image: "/images/nssf-removebg-preview.png",
     description: "The National Social Security Fund, providing social security services to Ugandans."
   },
   {
     id: 6,
     name: "DHL Uganda",
-    image: "/images/dhl.jpg",
+    image: "/images/dhl-removebg-preview.png",
     description: "Global leader in the logistics industry, providing international shipping and courier services."
   },
 ];
@@ -66,7 +66,7 @@ const Blog = () => {
               <img
                 src={company.image}
                 alt={company.name}
-                className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-48 object-contain transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
               {/* Hover Overlay */}
