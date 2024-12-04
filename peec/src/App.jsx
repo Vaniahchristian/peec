@@ -59,7 +59,7 @@ function App() {
                   className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.6 }}
                 >
                   <div className="container mx-auto px-4 w-full">
@@ -69,17 +69,35 @@ function App() {
                     <ServicePreview />
                   </div>
                 </motion.section>
-                <Testimonials theme={theme} />
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: false }}
+                >
+                  <Testimonials theme={theme} />
+                </motion.div>
 
                 <div className='container mx-auto px-4 w-full'>
-
-                
-                <Blog theme={theme} />
-
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: false }}
+                  >
+                    <Blog theme={theme} />
+                  </motion.div>
                 </div>
 
-
-                <section id="contact-section" className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+                <motion.section
+                  id="contact-section"
+                  className={`py-16 w-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: false }}
+                >
                   <div className="container mx-auto px-4 w-full">
                     <h2 className={`text-3xl font-bold text-center mb-12 ${theme === 'dark' ? 'text-green-400' : 'text-green-800'}`}>
                       Schedule a Site Visit
@@ -118,7 +136,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </section>
+                </motion.section>
               </motion.div>
             } />
             
